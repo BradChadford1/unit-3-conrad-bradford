@@ -16,5 +16,11 @@ public class MinOfThree {
       System.out.println("The smallest of them is " + num2);
     if (num3 < num1 && num3 < num2)
       System.out.println("The smallest of them is " + num3);
+
+    int num4 = 0;
+    while (num4 < 1000000000) {
+      num4 = num4 - 1000000000;
+    }
+    System.out.println(num4 + " Done");
   }
 }
