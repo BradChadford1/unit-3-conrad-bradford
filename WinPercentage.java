@@ -15,20 +15,20 @@ public class WinPercentage {
       System.out.println("Invalid input; Must have played at least one game and won at least zero games.");
 
       System.out.println("How many games were played?");
-      numGames = scan.nextInt();
+      numGames = scan.nextDouble();
 
       System.out.println("How many games were won?");
-      numGamesWon = scan.nextInt();
+      numGamesWon = scan.nextDouble();
     }
 
     while (((numGames%1) != 0) || ((numGamesWon%1) != 0)){
       System.out.println("Invalid input; Cannot have played or won a non-whole number of games");
 
       System.out.println("How many games were played?");
-      numGames = scan.nextInt();
+      numGames = scan.nextDouble();
 
       System.out.println("How many games were won?");
-      numGamesWon = scan.nextInt();
+      numGamesWon = scan.nextDouble();
     }
 
     double winPrcnt = (((double) numGamesWon)/((double) numGames))*100;
