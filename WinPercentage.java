@@ -43,6 +43,6 @@ public class WinPercentage {
 
     double winPrcnt = (((double) numGamesWon)/((double) numGames))*100;
 
-    System.out.println("(" + numGames + "," + numGamesWon + ") => " + winPrcnt + "%");
+    System.out.println("(" + numGames + "," + numGamesWon + ") => " + prcnt.format(winPrcnt) + "%");
    }
 }
