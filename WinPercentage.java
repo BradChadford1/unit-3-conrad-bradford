@@ -21,6 +21,16 @@ public class WinPercentage {
       numGamesWon = scan.nextDouble();
     }
 
+    while (numGamesWon > numGames){
+      System.out.println("Invalid input; Cannot have won more games than played");
+
+      System.out.println("How many games were played?");
+      numGames = scan.nextDouble();
+
+      System.out.println("How many games were won?");
+      numGamesWon = scan.nextDouble();
+    }
+
     while (((numGames%1) != 0) || ((numGamesWon%1) != 0)){
       System.out.println("Invalid input; Cannot have played or won a non-whole number of games");
 
