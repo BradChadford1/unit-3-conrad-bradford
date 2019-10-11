@@ -7,20 +7,28 @@ public class Palindrome {
 
     System.out.println("Please enter a word or phrase:");
 
-    userWord = read.nextLine();
+    String userWord = read.nextLine();
 
-    wordLength = userword.length();
+    int wordLength = userWord.length();
 
-    int count = 0;
-    int index = wordLength-1;
+    int index = wordLength - 1;
     String phrase = "";
-    while (count < wordLength + 1) {
-        String nextletter = userWord.substring(index, index);
-        phrase.concat(nextLetter);
-        index--;
-        count++;
-
+    char space = ' ';
+    while (index >= 0 ) {
+        char nextLetter = userWord.charAt(index);
+        if(Character.compare(nextLetter, space) != 0){
+          nextLetter = userWord.charAt(index);
+          phrase = phrase + nextLetter;
+          index--;
+        }
+        if(Character.compare(nextLetter, space) == 0){
+          nextLetter = userWord.charAt(index-1);
+          phrase = phrase + nextLetter + " " ;
+          index = index-2;
+        }
     }
+
+    System.out.println(phrase);
 
     if (phrase.compareTo(userWord) == 0){
       System.out.println("You have a palindrome!");
