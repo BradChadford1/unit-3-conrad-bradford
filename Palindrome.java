@@ -8,29 +8,21 @@ public class Palindrome {
     System.out.println("Please enter a word or phrase:");
 
     String userWord = read.nextLine();
-
-    int wordLength = userWord.length();
-
+    String userPhrase = userWord.replaceAll("[^a-zA-Z]", "");
+    int wordLength = userPhrase.length();
     int index = wordLength - 1;
     String phrase = "";
-    char space = ' ';
+
     while (index >= 0 ) {
-        char nextLetter = userWord.charAt(index);
-        if(Character.compare(nextLetter, space) != 0){
-          nextLetter = userWord.charAt(index);
-          phrase = phrase + nextLetter;
-          index--;
-        }
-        if(Character.compare(nextLetter, space) == 0){
-          nextLetter = userWord.charAt(index-1);
-          phrase = phrase + nextLetter + " " ;
-          index = index-2;
-        }
+        char nextLetter = userPhrase.charAt(index);
+        nextLetter = userPhrase.charAt(index);
+        phrase = phrase + nextLetter;
+        index--;
     }
 
     System.out.println(phrase);
 
-    if (phrase.compareTo(userWord) == 0){
+    if (phrase.compareTo(userPhrase) == 0){
       System.out.println("You have a palindrome!");
     }
     else {
