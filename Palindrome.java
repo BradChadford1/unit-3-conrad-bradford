@@ -8,7 +8,7 @@ public class Palindrome {
     System.out.println("Please enter a word or phrase:");
 
     String userWord = read.nextLine();
-    String userPhrase = userWord.replaceAll("[^a-zA-Z]", "");
+    String userPhrase = userWord.replaceAll("[^a-zA-Z]", "").toUpperCase();
     int wordLength = userPhrase.length();
     int index = wordLength - 1;
     String phrase = "";
