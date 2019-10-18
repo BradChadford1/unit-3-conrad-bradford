@@ -9,21 +9,21 @@ public class Palindrome {
 
     String userWord = read.nextLine();
 
-    int wordLength = userWord.length();
-
-    int count = 0;
-    int index = wordLength-1;
+    String userPhrase = userWord.replaceAll("[^a-zA-Z]", "").toUpperCase().replaceAll(",","");
+    int wordLength = userPhrase.length();
+    int index = wordLength - 1;
     String phrase = "";
 
-    while (count < wordLength + 1) {
-        String nextLetter = userWord.substring(index, index);
-        phrase.concat(nextLetter);
+    while (index >= 0 ) {
+        char nextLetter = userPhrase.charAt(index);
+        nextLetter = userPhrase.charAt(index);
+        phrase = phrase + nextLetter;
         index--;
-        count++;
-
     }
 
-    if (phrase.compareTo(userWord) == 0){
+    System.out.println(phrase);
+
+    if (phrase.compareTo(userPhrase) == 0){
       System.out.println("You have a palindrome!");
     }
     else {
