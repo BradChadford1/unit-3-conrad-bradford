@@ -7,15 +7,16 @@ public class Palindrome {
 
     System.out.println("Please enter a word or phrase:");
 
-    userWord = read.nextLine();
+    String userWord = read.nextLine();
 
-    wordLength = userword.length();
+    int wordLength = userWord.length();
 
     int count = 0;
     int index = wordLength-1;
     String phrase = "";
+
     while (count < wordLength + 1) {
-        String nextletter = userWord.substring(index, index);
+        String nextLetter = userWord.substring(index, index);
         phrase.concat(nextLetter);
         index--;
         count++;

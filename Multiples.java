@@ -13,7 +13,7 @@ public class Multiples {
     while (!(userNum >= 1)){
      System.out.println("Provide a positive integer");
      userNum = read.nextInt();
-}
+    }
 
     System.out.println("Provide an Upper Limit");
     int UpLim = read.nextInt();
@@ -21,12 +21,11 @@ public class Multiples {
     while (!(UpLim >= userNum)){
       System.out.println("Provide an Upper Limit greater than or equal to the integer provided");
       UpLim = read.nextInt();
-}
+    }
 
     System.out.println("(" + userNum + "," + UpLim + ") => ");
 
     int multiple = userNum;
-    int count = 1;
 
     String format = UpLim + "";
     String placeHolder = "";
@@ -37,15 +36,17 @@ public class Multiples {
 
     DecimalFormat colomn = new DecimalFormat(placeHolder);
 
+    int count = 1;
+
     for (int i = 1; (UpLim - multiple) > userNum; i++) {
       multiple = userNum * i;
-      if(count <= 5 ) {
+      if(count < 5 ) {
       System.out.print(colomn.format(multiple) + " ");
       count++;
     }
-      else{
-        System.out.println("");
-        count = 1;
+    else{
+      System.out.println(colomn.format(multiple) + " ");
+      count = 1;
       }
     }
   }
