@@ -24,7 +24,9 @@ public class Mini {
       }
 
       String asterik = "";
-
+      String space = "";
+      String draw = "";
+      
       if (option == 1) {
         asterik = "**********";
         for (int i = 0; i < 9; i++){
@@ -43,7 +45,7 @@ public class Mini {
 
       if (option == 3) {
         asterik = "**********";
-        String space = "          ";
+        space = "          ";
         for (int i = 0; i < asterik.length(); i++){
           System.out.println(asterik);
           asterik = space.substring(0 , i + 1) + asterik.substring(1 + i);
@@ -51,21 +53,43 @@ public class Mini {
       }
 
       if (option == 4) {
-        asterik = "          ";
-        for (int i = 9; i > -1; i++){
-          asterik = asterik.substring(1) + "*";
-          System.out.println(asterik);
+        asterik = "*";
+        space = "    ";
+        draw = "";
+        System.out.println("    " + asterik);
+        for (int i = 0; i < 4; i++) {
+          asterik = asterik + "**";
+          space = space.substring(0, space.length() - 1);
+          draw = space + asterik;
+          System.out.println(draw);
+        }
+        System.out.println(draw);
+        for (int i = 0; i < 4; i++) {
+          asterik = asterik.substring(0, asterik.length() - 2);
+          space = space + " ";
+          draw = space + asterik;
+          System.out.println(draw);
         }
       }
 
       if (option == 5) {
         asterik = "*********";
-        String space = "         ";
-        for (int i = 0; i < 5; i++) {
-          System.out.println(asterik);
-          asterik = space.substring(0, i + 1) + asterik.substring(i + 2);
+        space = "";
+        draw = "";
+        System.out.println(asterik);
+        for (int i = 0; i < 4; i++) {
+          asterik = asterik.substring(0, asterik.length() - 2);
+          space = space + " ";
+          draw = space + asterik;
+          System.out.println(draw);
         }
-
+        System.out.println(draw);
+        for (int i = 0; i < 4; i++) {
+          asterik = asterik + "**";
+          space = space.substring(0, space.length() - 1);
+          draw = space + asterik;
+          System.out.println(draw);
+        }
       }
 
     }
